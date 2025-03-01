@@ -10,12 +10,8 @@ public class InventorySlotUI : MonoBehaviour
     public int index;
     public InventorySystem inventory;
 
-    private void Awake()
-    {
-        icon = transform.GetChild(0).GetComponent<Image>();
-        blockIcon = transform.GetChild(2).GetComponent<Image>();
-        countText = GetComponentInChildren<TextMeshProUGUI>();
-    }
+  
+    
 
     public void Setup(int i, InventorySystem inv)
     {
@@ -28,14 +24,12 @@ public class InventorySlotUI : MonoBehaviour
         var slot = inventory.slots[index];
 
         if (slot.IsUnlocked)
-        {
-           
-            blockIcon.enabled = false;
+        { 
+             blockIcon.enabled = false;
         }
         else
-        {
-          
-            blockIcon.enabled = true;
+        {       
+             blockIcon.enabled = true;
         }
 
 

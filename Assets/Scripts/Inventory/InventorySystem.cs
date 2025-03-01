@@ -8,10 +8,19 @@ public class InventorySystem : ScriptableObject
 {
     public InventorySlot[] slots = new InventorySlot[30];
     public int unlockedSlots = 15;
-    public int unlockPrice = 100;  
-    public int playerCoins = 500; 
+    public int unlockPrice = 100;
+    public int playerCoins = 500;
 
+    private void OnEnable()
+    {
+        
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i] = new InventorySlot();
+        }
+    }
 
+    
 
     public void UnlockFirstSlots()
     {

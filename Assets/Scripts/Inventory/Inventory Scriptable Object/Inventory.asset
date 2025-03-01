@@ -105,4 +105,4 @@ MonoBehaviour:
     IsUnlocked: 0
   unlockedSlots: 15
   unlockPrice: 100
-  playerCoins: 300
+  playerCoins: 500
