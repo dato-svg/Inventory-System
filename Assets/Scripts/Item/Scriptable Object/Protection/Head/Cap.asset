@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: cap
   weight: 0.1
-  icon: {fileID: 0}
+  icon: {fileID: -491585870, guid: 9a1a884aebbb3974fad53105c57d58d7, type: 3}
   itemType: 2
   maxStack: 3
   defense: 3

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Bullet 2
   weight: 0.01
-  icon: {fileID: 0}
+  icon: {fileID: 1295886621, guid: 9a1a884aebbb3974fad53105c57d58d7, type: 3}
   itemType: 0
   maxStack: 40

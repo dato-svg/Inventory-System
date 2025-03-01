@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Automatic weapon
   weight: 5
-  icon: {fileID: 0}
+  icon: {fileID: -603738993, guid: 9a1a884aebbb3974fad53105c57d58d7, type: 3}
   itemType: 1
   maxStack: 3
   attackPower: 20
