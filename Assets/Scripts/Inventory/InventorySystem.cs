@@ -42,18 +42,7 @@ public class InventorySystem : ScriptableObject
         return totalDefense;
     }
 
-    public int GetTotalAttack()
-    {
-        int totalAttack = 0;
-        foreach (var slot in slots)
-        {
-            if (slot.item is WeaponItem weapon)
-            {
-                totalAttack += weapon.attackPower * slot.count;
-            }
-        }
-        return totalAttack;
-    }
+   
 
 
 
@@ -74,7 +63,7 @@ public class InventorySystem : ScriptableObject
         {
             if (slot.IsUnlocked && slot.AddItem(item, amount))
             {
-                Debug.Log($"Общий вес: {GetTotalWeight()} | Общая броня: {GetTotalDefense()} | Общий урон: {GetTotalAttack()}");
+                Debug.Log($"Общий вес: {GetTotalWeight()} | Общая броня: {GetTotalDefense()}");
                 return true;
             }
         }
@@ -86,7 +75,7 @@ public class InventorySystem : ScriptableObject
         if (slotIndex >= 0 && slotIndex < slots.Length && slots[slotIndex].IsUnlocked)
         {
             slots[slotIndex].Clear();
-            Debug.Log($"Общий вес: {GetTotalWeight()} | Общая броня: {GetTotalDefense()} | Общий урон: {GetTotalAttack()}");
+            Debug.Log($"Общий вес: {GetTotalWeight()} | Общая броня: {GetTotalDefense()}");
         }
     }
 

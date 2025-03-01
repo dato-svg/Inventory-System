@@ -18,27 +18,40 @@ public class InventoryActions : MonoBehaviour
     }
     public void Shoot()
     {
+       
+        var weaponSlots = inventory.slots.Where(slot => slot.item is WeaponItem).ToList();
+
+        if (weaponSlots.Count == 0)
+        {
+            Debug.LogError("Нет оружия для стрельбы!");
+            return;
+        }
+
+        var randomWeaponSlot = weaponSlots[Random.Range(0, weaponSlots.Count)];
+        var equippedWeapon = randomWeaponSlot.item as WeaponItem;
+
         var ammoSlots = inventory.slots.Where(slot => slot.item?.itemType == ItemType.Ammo).ToList();
 
-        if (ammoSlots.Count > 0)
+        if (ammoSlots.Count == 0)
         {
-            var randomSlot = ammoSlots[Random.Range(0, ammoSlots.Count)];
-
-            randomSlot.count--;
-
-            if (randomSlot.count <= 0)
-            {
-                randomSlot.Clear();
-            }
-
-            inventoryUI.RefreshUI();
-        }
-        else
-        {
-           
             Debug.LogError("Нет патронов в инвентаре!");
+            return;
         }
+
+        var randomAmmoSlot = ammoSlots[Random.Range(0, ammoSlots.Count)];
+        randomAmmoSlot.count--;
+
+        if (randomAmmoSlot.count <= 0)
+        {
+            randomAmmoSlot.Clear();
+        }
+
+        inventoryUI.RefreshUI();
+
+        Debug.Log($"Выстрел из {equippedWeapon.itemName}! Урон: {equippedWeapon.attackPower}");
     }
+
+
 
 
     public void AddAmmo()
