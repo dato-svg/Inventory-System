@@ -3,7 +3,7 @@ using UnityEngine;
 public class InventoryUI : MonoBehaviour
 {
     public InventorySystem inventory;
-    public InventorySlotUI[] slotUIs;
+    private InventorySlotUI[] slotUIs;
 
     public Transform slotContainer;
     private void Awake()
